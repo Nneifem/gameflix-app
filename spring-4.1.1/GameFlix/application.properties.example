@@ -1,3 +1,0 @@
-spring.datasource.username=your-SQL-username
-spring.datasource.password=your-SQL-password
-jwt.secret=32-character-random-string
