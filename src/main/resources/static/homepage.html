@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <title>GameFlix</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- Header -->
+<nav class="navbar border-bottom sticky-top bg-body">
+    <div class="container">
+        <span class="navbar-brand fs-3 fw-bold">GameFlix</span>
+        <ul class="nav nav-pills me-auto ms-3">
+            <li class="nav-item"><button id="navGames" class="nav-link active" type="button">Games</button></li>
+            <li class="nav-item"><button id="navSub" class="nav-link" type="button">Subscription</button></li>
+        </ul>
+        <span class="navbar-text me-3 d-none d-md-inline" id="who"></span>
+        <button id="logout" class="btn btn-outline-secondary btn-sm" type="button">Sign out</button>
+    </div>
+</nav>
+
+<main class="container py-4">
+    <section id="vGames">
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-3">
+            <div>
+                <h2 class="mb-1">Game Catalog</h2>
+                <p class="text-body-secondary mb-0">Pick a game to play</p>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="kidOnly">
+                <label class="form-check-label" for="kidOnly">Kid-friendly only</label>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3" id="grid"></div>
+    </section>
+
+    <section id="vSub" class="d-none">
+        <h2 class="mb-1">Your subscription</h2>
+        <p class="text-body-secondary">You need a subscription to play.</p>
+        <div class="card card-body flex-row flex-wrap align-items-center justify-content-between gap-3" id="subStatus"></div>
+        <h3 class="h5 mt-4" id="planHeading"></h3>
+        <div class="row row-cols-1 row-cols-md-3 g-3" id="plans"></div>
+    </section>
+</main>
+
+<!-- Game panel details-->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="gameCanvas" aria-labelledby="gTitle">
+    <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="gTitle"></h3>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="cover rounded mb-3" id="gCover"></div>
+        <p class="text-body-secondary" id="gMeta"></p>
+        <p id="gDesc"></p>
+        <button class="btn btn-primary" id="play" type="button">Play now</button>
+        <div id="playResult" class="mt-3"></div>
+        <hr class="my-4">
+        <h4>Reviews</h4>
+        <textarea id="rtext" class="form-control" rows="3" maxlength="2000"></textarea>
+        <button class="btn btn-outline-secondary btn-sm mt-2" id="post" type="button">Post review</button>
+        <div class="list-group list-group-flush mt-3" id="revs"></div>
+    </div>
+</div>
+
+<!-- Message popup -->
+<div class="toast-container position-fixed bottom-0 start-50 translate-middle-x p-3">
+    <div id="toast" class="toast text-bg-warning" role="status" aria-live="polite" aria-atomic="true">
+        <div class="toast-body fw-semibold" id="toastMsg"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<link href="css/homepage.css" rel="stylesheet">
+<script src="js/common.js"></script>
+<script src="js/subscription.js"></script>
+<script src="js/games.js"></script>
+<script src="js/homepage.js"></script>
+</body>
+</html>

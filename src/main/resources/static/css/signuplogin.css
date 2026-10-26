@@ -1,0 +1,54 @@
+/* =========================================================
+   index.html: sign in, create account, choose a plan
+   ========================================================= */
+
+/* ---------- brand colors (delete this block for stock Bootstrap blue) ---------- */
+:root {
+    --bs-primary: #ff4d8d;
+    --bs-primary-rgb: 255, 77, 141;
+    --bs-link-color: #ff4d8d;
+    --bs-link-hover-color: #e63e7a;
+}
+
+.btn-primary {
+    --bs-btn-bg: #ff4d8d;
+    --bs-btn-border-color: #ff4d8d;
+    --bs-btn-hover-bg: #e63e7a;
+    --bs-btn-hover-border-color: #e63e7a;
+    --bs-btn-active-bg: #cc3569;
+    --bs-btn-active-border-color: #cc3569;
+    --bs-btn-disabled-bg: #ff4d8d;
+    --bs-btn-disabled-border-color: #ff4d8d;
+}
+
+.nav-pills {
+    --bs-nav-pills-link-active-bg: #ff4d8d;
+}
+
+.form-control:focus {
+    border-color: #ff4d8d;
+    box-shadow: 0 0 0 .25rem rgba(255, 77, 141, .25);
+}
+
+/* ---------- sign in / create account ---------- */
+#auth h1,
+#picker h1 {
+    font-weight: 800;
+    letter-spacing: -.03em;
+}
+
+#auth .card,
+#picker .card {
+    border-radius: 1rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .08);
+}
+
+/* ---------- choose a plan ---------- */
+#picker .card {
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+
+#picker .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 .75rem 1.75rem rgba(0, 0, 0, .12);
+}
