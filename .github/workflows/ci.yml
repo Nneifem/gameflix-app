@@ -50,9 +50,6 @@ jobs:
           path: sbom.cdx.json
           retention-days: 90
 
-      - name: Trivy report (HIGH and CRITICAL, does not fail)
-        uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
-        with:
-          image-ref: gameflix-backend:ci
-          format: table
-          severity: HIGH,CRITICAL
+- name: Scan for critical vulnerabilities
+  run: |
+    trivy image --severity CRITICAL --exit-code 1 gameflix-app:latest
