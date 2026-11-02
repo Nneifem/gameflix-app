@@ -49,7 +49,11 @@ jobs:
           name: sbom-${{ github.sha }}
           path: sbom.cdx.json
           retention-days: 90
-
-- name: Scan for critical vulnerabilities
-  run: |
-    trivy image --severity CRITICAL --exit-code 1 gameflix-app:latest
+          
+      - name: Scan for critical vulnerabilities
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: gameflix-backend:ci
+          format: table
+          exit-code: '1'
+          severity: CRITICAL
