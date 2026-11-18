@@ -1,4 +1,4 @@
-package org.example.gameflix;
+package com.GameFlix.service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
